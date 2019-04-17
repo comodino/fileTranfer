@@ -1,5 +1,5 @@
 <?php
-namespace Sonata\BlockBundle\Block;
+namespace App\Block;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
