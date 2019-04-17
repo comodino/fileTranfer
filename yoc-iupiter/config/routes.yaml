@@ -1,0 +1,10 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+dtc_queue:
+  prefix: admin/
+  resource: '@DtcQueueBundle/Resources/config/routing.yml'
+dtc_grid:
+  prefix: admin/
+  resource: '@DtcGridBundle/Resources/config/routing.yml'

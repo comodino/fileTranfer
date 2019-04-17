@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Iupiter-Queue</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_jobs' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_jobs') }}">Waiting Jobs{% if app.request.get('_route') == 'dtc_queue_jobs' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_jobs_running' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_jobs_running') }}">Running Jobs{% if app.request.get('_route') == 'dtc_queue_jobs_running' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_jobs_all' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_jobs_all') }}">All Jobs{% if app.request.get('_route') == 'dtc_queue_jobs_all' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_runs' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_runs') }}">Runs{% if app.request.get('_route') == 'dtc_queue_runs' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_status' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_queue_status') }}">Status{% if app.request.get('_route') == 'dtc_queue_status' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_workers' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_workers') }}">Workers{% if app.request.get('_route') == 'dtc_queue_workers' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item {%  if app.request.get('_route') == 'dtc_queue_trends' %}active{% endif %}">
+                <a class="nav-link" href="{{ path('dtc_queue_trends') }}">Trends{% if app.request.get('_route') == 'dtc_queue_trends' %} <span class="sr-only">(current)</span>{% endif %}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('sonata_admin_dashboard') }}">Dashboard</a>
+            </li>
+
+
+        </ul>
+    </div>
+</nav>
+

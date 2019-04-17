@@ -1,0 +1,47 @@
+sonata_admin:
+  title:      false
+  title_logo: /images/logo.png
+  templates:
+        dashboard: '@SonataAdmin/Core/dashboard.html.twig'
+  dashboard:
+    blocks:
+      -
+        position: top
+        class: col-md-4
+        type: sonata.admin.block.admin_list
+        settings:
+          groups: [system_group]
+      -
+        position: top
+        class: col-md-4
+        type: sonata.admin.block.admin_list
+        settings:
+          groups: [general_group]
+      -
+        position: top
+        class: col-md-4
+        type: sonata.admin.block.admin_list
+        settings:
+          groups: [services_group]
+
+                                    
+    groups:
+      system_group:
+        label: System
+        items:
+          - sonata.user.admin.group
+          - sonata.user.admin.user
+
+      general_group:
+        label: Dati base
+        items:
+          - admin.client
+
+      services_group:
+        label: Servizi aggiuntivi
+        items:
+          - route: dtc_queue_queue_status
+            label: DtcQueue
+
+
+
