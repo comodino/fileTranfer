@@ -24,7 +24,7 @@ trait CommonTrait
      * @var boolean
      * @ORM\Column(name="flg_enable", type="boolean", nullable=true)
      */
-    protected $flgEnable=false;
+    protected $flgEnable=0;
 
 
     /**

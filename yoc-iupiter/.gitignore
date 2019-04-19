@@ -17,3 +17,12 @@
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
+###> OS ###
+.DS_Store
+###< OS ###
+
+###> eclipse project file ###
+.settings/
+.buildpath
+.project
+###< eclipse project file ###

@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Gedmo\Timestampable\Traits\Timestampable;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Entity\Translation\ClientTranslation;
 
 /**
  * @ORM\Entity()
@@ -15,6 +16,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     normalizationContext={"groups"={"read"}},
  *     denormalizationContext={"groups"={"write"}},
  * )
+ * @Gedmo\TranslationEntity(class="Entity\Translation\ClientTranslation")
  */
 class Client
 {
@@ -22,6 +24,7 @@ class Client
 
     /**
      * @var string
+     * @Gedmo\Translatable
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
      * @Groups({"read", "write"})
      */
@@ -56,6 +59,19 @@ class Client
         $this->slug = $slug;
 
         return $this;
+    }
+    
+    public function getTranslations()
+    {
+        return $this->translations;
+    }
+    
+    public function addTranslation(ClientTranslation $t)
+    {
+        if (!$this->translations->contains($t)) {
+            $this->translations[] = $t;
+            $t->setObject($this);
+        }
     }
 
 }

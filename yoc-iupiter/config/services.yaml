@@ -40,11 +40,3 @@ services:
             - { name: sonata.admin, manager_type: orm, group: admin, label: Client }
         public: true
 
-    sonata.block.service.testo:
-        class: App\Block\Service\TestoBlockService
-        arguments:
-            - ~
-            - '@twig'
-        tags:
-            - { name: sonata.block }
-            
