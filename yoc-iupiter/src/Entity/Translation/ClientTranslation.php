@@ -3,7 +3,6 @@ namespace Entity\Translation;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Entity\MappedSuperclass\AbstractTranslation;
-use Knp\Doctrine
 
 /**
  * @ORM\Table(name="client_translations", indexes={
